@@ -1,7 +1,7 @@
 import React from 'react'
 import { usePageData } from '@/hooks/usePageData'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
-import { SEO, Hero, Section, Card, CTABand, Eyebrow, Chip } from './_brand'
+import { SEO, Hero, Section, Card, CTABand, Eyebrow } from './_brand'
 
 type Member = {
   name: string
@@ -16,14 +16,12 @@ const fallback: Member[] = [
   {
     name: 'Shahril Goh Fadhil',
     role: 'Kaizen Consulting Partner',
-    bio: 'Leads the Kaizen engagement with your people — Lean / Operational Excellence, KPI and point-of-entitlement analysis, root-cause and countermeasures. Finds where value leaks and frames the solution your teams will own.',
-    linkedin: 'https://www.linkedin.com/in/sharilgohfadhil/',
+    bio: 'Shahril Goh Fadhil leads the Kaizen side of ikagAI. Over a career in operational excellence and continuous improvement, he has guided hospitality, manufacturing and service teams to find where value really leaks — and to close the gap with their own people. He works at the gemba: mapping KPIs against the point of entitlement, running root-cause and 5-Whys analysis, and turning findings into prioritised, owned action lists. His strength is making improvement stick — embedding standard work, visual management and a daily Kaizen rhythm so gains hold long after the workshop ends. Trained in Lean and Six Sigma, he frames every engagement around Safety, Quality, Delivery and Cost, pairing disciplined method with genuine respect for the people who do the work. Fadhil builds the clear, measurable foundation that ikagAI’s AI systems are then engineered to scale.',
   },
   {
     name: 'Mohd Azlan Abas',
-    role: 'AI Solution Build',
-    bio: 'Builds and runs the AI that closes the gap. Strategy (ex top-tier consulting) plus engineering depth in one builder — Mechanical Engineer, Certified Accountant, Software Engineer and GCP Cloud Engineer. Speaks operations, numbers and code.',
-    linkedin: 'https://www.linkedin.com/in/mohdazlanabas/',
+    role: 'AI Solution Partner',
+    bio: 'Mohd Azlan Abas builds and runs the AI that turns a Kaizen finding into a system that improves every day. He is an unusual blend of strategy and engineering — a Mechanical Engineer and Certified Accountant who is also a Software Engineer and GCP Cloud Engineer, with consulting-grade problem framing. That range lets him speak operations, numbers and code in the same conversation: sizing the value, designing the data platform, training the models, and wiring automation back into the tools teams already use. He focuses on production, not proofs-of-concept — governed data pipelines, forecasting and anomaly detection, retrieval-grounded assistants, and the MLOps and security that keep them accurate and compliant over time. Azlan delivers in focused 6–8 week pilots with a clear ROI gate, so every build is measurable, owned by the client, and ready to scale across rooms, outlets and properties.',
   },
 ]
 
@@ -69,13 +67,7 @@ export const AboutPage: React.FC = () => {
                   <div className="text-sm font-bold" style={{ color: 'var(--green)' }}>{m.role}</div>
                 </div>
               </div>
-              {m.bio && <p className="mt-4 text-sm" style={{ color: 'var(--mute)' }}>{m.bio}</p>}
-              {m.linkedin && (
-                <a href={m.linkedin} target="_blank" rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold" style={{ color: 'var(--blue)' }}>
-                  Connect on LinkedIn →
-                </a>
-              )}
+              {m.bio && <p className="mt-4 text-sm leading-relaxed" style={{ color: 'var(--mute)' }}>{m.bio}</p>}
             </Card>
           ))}
         </div>
@@ -93,20 +85,18 @@ export const AboutPage: React.FC = () => {
             <p className="text-sm" style={{ color: 'var(--ink)' }}>✓ Same People · Process · Systems levers and PDCA loop you already trust.</p>
           </Card>
         </div>
-        <div className="mt-6 rounded-2xl p-6" style={{ background: 'var(--blue-soft)', border: '1px solid #c9defa' }}>
+        <div className="mt-6 rounded-2xl p-6 md:p-8" style={{ background: 'var(--blue-soft)', border: '1px solid #c9defa' }}>
           <Eyebrow>Combined experience</Eyebrow>
-          <p className="mt-2 text-base font-semibold" style={{ color: 'var(--navy2)' }}>
-            Decades of combined Kaizen, Lean Six Sigma, operational & finance, and system-development
-            experience — strategy and engineering depth, end to end.
+          <p className="mt-3 text-base md:text-lg font-semibold leading-relaxed" style={{ color: 'var(--navy2)' }}>
+            Between them, Fadhil and Azlan bring decades of combined experience across management
+            consulting, Lean Six Sigma and operational excellence, business improvement and change
+            management, finance and accounting, and mechanical, software and cloud engineering. They
+            have led improvement programmes end to end — from first diagnostic through implementation
+            to successful project closure and handover — across hospitality, F&amp;B and industrial
+            operations. That means ikagAI can size the opportunity, win the buy-in of the people who
+            run the floor, build the AI that captures the gain, and make the new way of working stick:
+            strategy and engineering, method and delivery, in one team.
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <Chip tone="ghost">Lean Six Sigma</Chip>
-            <Chip tone="ghost">Operational Excellence</Chip>
-            <Chip tone="ghost">Mechanical Engineer</Chip>
-            <Chip tone="ghost">Certified Accountant</Chip>
-            <Chip tone="ghost">Software Engineer</Chip>
-            <Chip tone="ghost">GCP Cloud Engineer</Chip>
-          </div>
         </div>
       </Section>
 

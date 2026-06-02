@@ -26,14 +26,14 @@ const team = [
     role: 'Kaizen Consulting Partner',
     order: 1,
     linkedin: 'https://www.linkedin.com/in/sharilgohfadhil/',
-    bio: 'Leads the Kaizen engagement with your people — Lean / Operational Excellence, KPI and point-of-entitlement analysis, root-cause and countermeasures. Finds where value leaks and frames the solution your teams will own.',
+    bio: 'Shahril Goh Fadhil leads the Kaizen side of ikagAI. Over a career in operational excellence and continuous improvement, he has guided hospitality, manufacturing and service teams to find where value really leaks — and to close the gap with their own people. He works at the gemba: mapping KPIs against the point of entitlement, running root-cause and 5-Whys analysis, and turning findings into prioritised, owned action lists. His strength is making improvement stick — embedding standard work, visual management and a daily Kaizen rhythm so gains hold long after the workshop ends. Trained in Lean and Six Sigma, he frames every engagement around Safety, Quality, Delivery and Cost, pairing disciplined method with genuine respect for the people who do the work. Fadhil builds the clear, measurable foundation that ikagAI’s AI systems are then engineered to scale.',
   },
   {
     name: 'Mohd Azlan Abas',
-    role: 'AI Solution Build',
+    role: 'AI Solution Partner',
     order: 2,
     linkedin: 'https://www.linkedin.com/in/mohdazlanabas/',
-    bio: 'Builds and runs the AI that closes the gap. Strategy plus engineering depth in one builder — Mechanical Engineer, Certified Accountant, Software Engineer and GCP Cloud Engineer. Speaks operations, numbers and code.',
+    bio: 'Mohd Azlan Abas builds and runs the AI that turns a Kaizen finding into a system that improves every day. He is an unusual blend of strategy and engineering — a Mechanical Engineer and Certified Accountant who is also a Software Engineer and GCP Cloud Engineer, with consulting-grade problem framing. That range lets him speak operations, numbers and code in the same conversation: sizing the value, designing the data platform, training the models, and wiring automation back into the tools teams already use. He focuses on production, not proofs-of-concept — governed data pipelines, forecasting and anomaly detection, retrieval-grounded assistants, and the MLOps and security that keep them accurate and compliant over time. Azlan delivers in focused 6–8 week pilots with a clear ROI gate, so every build is measurable, owned by the client, and ready to scale across rooms, outlets and properties.',
   },
 ]
 
