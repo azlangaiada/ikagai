@@ -1,0 +1,30 @@
+build
+dist
+node_modules
+.DS_Store
+.env
+.next
+next-env.d.ts
+.vercel
+
+# Payload default media upload directory
+public/media/
+packages/web/public/media/
+
+public/robots.txt
+public/sitemap*.xml
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+/database_backup/
+/.claude/worktrees/
+packages/cms/public/
+tsconfig.tsbuildinfo
+
+# graphify knowledge graph output (regenerated locally)
+/graphify-out/

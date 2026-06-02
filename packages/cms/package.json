@@ -1,0 +1,45 @@
+{
+  "name": "@ikagai/cms",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev -p 4010",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start -p 4010",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "seed:ikagai": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed-ikagai.ts",
+    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "test": "cross-env NODE_OPTIONS=--no-deprecation vitest run",
+    "test:watch": "cross-env NODE_OPTIONS=--no-deprecation vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.80.0",
+    "@payloadcms/next": "3.80.0",
+    "@payloadcms/plugin-form-builder": "3.80.0",
+    "@payloadcms/plugin-nested-docs": "3.80.0",
+    "@payloadcms/plugin-redirects": "3.80.0",
+    "@payloadcms/plugin-search": "3.80.0",
+    "@payloadcms/plugin-seo": "3.80.0",
+    "@payloadcms/richtext-lexical": "3.80.0",
+    "@payloadcms/ui": "3.80.0",
+    "cross-env": "7.0.3",
+    "dotenv": "^16.4.7",
+    "graphql": "16.8.2",
+    "next": "16.2.1",
+    "node-fetch": "^3.3.0",
+    "payload": "3.80.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sharp": "0.34.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "5.7.3",
+    "vitest": "^4.0.0"
+  }
+}

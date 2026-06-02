@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Disallow: /admin/*
+
+# Host
+Host: http://templatebase.gaiada.online
+
+# Sitemaps
+Sitemap: http://templatebase.gaiada.online/sitemap.xml
+Sitemap: http://templatebase.gaiada.online/pages-sitemap.xml
+Sitemap: http://templatebase.gaiada.online/posts-sitemap.xml

@@ -1,0 +1,41 @@
+{
+  "name": "ikagai",
+  "version": "1.0.0",
+  "description": "Reusable template: Vite SSR + Payload CMS headless + React + Tailwind + Node + Postgres (VRTPN stack)",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n cms,web -c cyan,magenta \"pnpm --filter @ikagai/cms dev\" \"pnpm --filter @ikagai/web dev\"",
+    "dev:cms": "pnpm --filter @ikagai/cms dev",
+    "dev:web": "pnpm --filter @ikagai/web dev",
+    "build": "pnpm --filter @ikagai/cms build && pnpm --filter @ikagai/web build",
+    "build:cms": "pnpm --filter @ikagai/cms build",
+    "build:web": "pnpm --filter @ikagai/web build",
+    "start": "concurrently -n cms,web -c cyan,magenta \"pnpm --filter @ikagai/cms start\" \"pnpm --filter @ikagai/web start\"",
+    "generate:types": "pnpm --filter @ikagai/cms generate:types",
+    "generate:importmap": "pnpm --filter @ikagai/cms generate:importmap",
+    "lint": "eslint . --config config/tooling/eslint.config.mjs",
+    "lint:fix": "eslint . --config config/tooling/eslint.config.mjs --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,cjs,json,md}\"",
+    "test": "pnpm --filter @ikagai/cms test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "concurrently": "^9.1.0",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.18.0"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0",
+    "pnpm": "^9 || ^10"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}
