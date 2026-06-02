@@ -40,7 +40,7 @@ AI FOR HOSPITALITY, TOURISM & F&B (flagship solutions)
 
 PEOPLE
 - Shahril Goh Fadhil — Kaizen Consulting Partner (leads the Kaizen engagement).
-- Mohd Azlan Abas — AI Solution Partner (builds and runs the AI). Background spans Mechanical Engineering, Accounting, Software Engineering and GCP Cloud.
+- Azlan Abas — AI Solution Partner (builds and runs the AI). Background spans Mechanical Engineering, Accounting, Software Engineering and GCP Cloud.
 
 CONTACT
 - Email: azlan@net1io.com and sharil.fadhil@gmail.com. WhatsApp: +601120518366.
