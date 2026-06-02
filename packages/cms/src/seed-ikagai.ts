@@ -78,7 +78,7 @@ async function run() {
   await payload.updateGlobal({ slug: 'header', data: { navItems } as any })
   await payload.updateGlobal({
     slug: 'footer',
-    data: { copyright: '© 2026 ikagAI', developedBy: 'Developed by Gaia Digital Agency', navItems } as any,
+    data: { copyright: '© 2026 ikagAI', developedBy: '', navItems } as any,
   })
   await payload.updateGlobal({
     slug: 'settings',

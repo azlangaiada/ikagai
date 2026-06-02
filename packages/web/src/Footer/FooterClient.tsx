@@ -5,6 +5,7 @@ import type { Footer, Setting } from '@/payload-types'
 
 import { CMSLink } from '@/components/Link'
 import { Logo } from '@/components/Logo/Logo'
+import { FooterInfo } from './FooterInfo'
 import { OFFICE_ADDRESS } from '@/pages/ikagai/ContactPage'
 
 interface FooterClientProps {
@@ -83,9 +84,9 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footer, settings }) 
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="container py-4 flex flex-col sm:flex-row justify-between gap-2 text-xs" style={{ color: '#9fb0c6' }}>
+        <div className="container py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs" style={{ color: '#9fb0c6' }}>
           <span>{footer?.copyright || '© 2026 ikagAI'}</span>
-          <span>{footer?.developedBy || 'Developed by Gaia Digital Agency'}</span>
+          <FooterInfo />
         </div>
       </div>
     </footer>
