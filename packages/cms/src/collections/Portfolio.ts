@@ -4,6 +4,7 @@ import { authenticated } from '../access/authenticated'
 export const Portfolio: CollectionConfig = {
   slug: 'portfolio',
   admin: {
+    hidden: true,
     useAsTitle: 'title',
   },
   access: {

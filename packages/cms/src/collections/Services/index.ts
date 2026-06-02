@@ -33,6 +33,7 @@ export const Services: CollectionConfig<'services'> = {
     slug: true,
   },
   admin: {
+    hidden: true,
     defaultColumns: ['title', 'slug', 'updatedAt'],
     useAsTitle: 'title',
   },

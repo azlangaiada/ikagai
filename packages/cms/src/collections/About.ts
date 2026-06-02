@@ -4,6 +4,7 @@ import { authenticated } from '../access/authenticated'
 export const About: CollectionConfig = {
   slug: 'about-items',
   admin: {
+    hidden: true,
     useAsTitle: 'title',
   },
   access: {

@@ -4,6 +4,7 @@ import { authenticated } from '../access/authenticated'
 export const Departments: CollectionConfig = {
   slug: 'departments',
   admin: {
+    hidden: true,
     useAsTitle: 'name',
   },
   access: {
