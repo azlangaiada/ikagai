@@ -86,10 +86,7 @@ async function run() {
       whatsappNumber: '+601120518366',
       contactEmail: 'azlan@net1io.com',
       contactEmail2: 'sharil.fadhil@gmail.com',
-      socialLinks: [
-        { platform: 'linkedin', placeholder: 'Fadhil (Kaizen)', url: 'https://www.linkedin.com/in/sharilgohfadhil/' },
-        { platform: 'linkedin', placeholder: 'Azlan (AI)', url: 'https://www.linkedin.com/in/mohdazlanabas/' },
-      ],
+      socialLinks: [],
     } as any,
   })
 
