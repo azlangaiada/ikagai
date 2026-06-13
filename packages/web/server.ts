@@ -142,6 +142,13 @@ async function createServer() {
     res.redirect('/')
   })
 
+  // /email — shortcut to read the principal@ikigai-life.online mailbox.
+  // Redirects to Microsoft 365 / Outlook webmail (login required — the inbox is
+  // never exposed publicly); the login hint pre-fills the address.
+  app.get('/email', (_req, res) => {
+    res.redirect('https://outlook.office.com/mail/?login_hint=principal%40ikigai-life.online')
+  })
+
   // Escape </ in JSON to prevent script-tag breakout (XSS)
   const safeJson = (data: unknown) =>
     JSON.stringify(data).replace(/</g, '\\u003c')

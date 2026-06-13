@@ -33,9 +33,11 @@ export async function fetchPageData(url: string, options: FetchOptions) {
   }
 
   // ikigaAI coded marketing routes — globals + (team for About, contact form for Contact)
-  // Routes whose page shows the Contact form (generic /chat + per-person vanity URLs).
-  const CONTACT_FORM_ROUTES = ['contact', 'chat', 'azlan', 'sharil', 'mubarak']
-  const STATIC_ROUTES = ['kaizen-ai', 'kaizen', 'ai-hospitality', 'about', ...CONTACT_FORM_ROUTES]
+  // Routes whose page shows the Contact form (/contact + generic /chat popup).
+  const CONTACT_FORM_ROUTES = ['contact', 'chat']
+  // Per-person digital business cards (just need globals; no form).
+  const CARD_ROUTES = ['azlan', 'sharil', 'mubarak']
+  const STATIC_ROUTES = ['kaizen-ai', 'kaizen', 'ai-hospitality', 'about', ...CONTACT_FORM_ROUTES, ...CARD_ROUTES]
   if (segments.length === 1 && STATIC_ROUTES.includes(segments[0])) {
     const slug = segments[0]
     return cachedFetch(
