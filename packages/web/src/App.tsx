@@ -59,6 +59,9 @@ export const App: React.FC<AppProps> = ({ initialData, draft }) => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/chat" element={<ChatPage />} />
+            <Route path="/azlan" element={<ChatPage />} />
+            <Route path="/sharil" element={<ChatPage />} />
+            <Route path="/mubarak" element={<ChatPage />} />
             <Route path="/posts" element={<PostsPage />} />
             <Route path="/posts/page/:pageNumber" element={<PostsPaginatedPage />} />
             <Route path="/posts/:slug" element={<PostPage />} />

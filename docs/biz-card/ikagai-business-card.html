@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ikigAI Business Card</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 40px;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .page-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #888;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    width: 350px;
+    height: 200px;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle corner accent — the one design risk */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 48px; height: 48px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+  }
+
+  /* ── Brand block ── */
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #000;
+    line-height: 1;
+  }
+
+  .brand-name span {
+    font-style: italic;
+  }
+
+  .brand-url {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: #555;
+    text-transform: lowercase;
+    font-weight: 400;
+    margin-top: 3px;
+  }
+
+  /* ── Person block ── */
+  .person {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .person-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.02em;
+  }
+
+  .person-role {
+    font-size: 9px;
+    color: #666;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .person-phone {
+    font-size: 9.5px;
+    color: #333;
+    margin-top: 3px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Footer strip ── */
+  .footer {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .company-name {
+    font-size: 7.5px;
+    color: #444;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .company-reg {
+    font-size: 7px;
+    color: #888;
+    letter-spacing: 0.04em;
+  }
+
+  .company-address {
+    font-size: 7px;
+    color: #888;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  .chat-link {
+    font-size: 7.5px;
+    color: #333;
+    letter-spacing: 0.06em;
+    text-align: right;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+
+  /* ─── GRID VIEW (all 3 cards together) ─── */
+  .cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  /* ─── BACK of card ─── */
+  .card.back {
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .back .brand-name {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .back .brand-url {
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .back .chat-link-back {
+    font-size: 8px;
+    color: #777;
+    letter-spacing: 0.12em;
+    margin-top: 4px;
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    body { background: white; gap: 10mm; }
+    .page-label { display: none; }
+    .card { box-shadow: none; border: 0.5pt solid #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<p class="page-label">ikigAI — Business Cards · Front</p>
+
+<div class="cards-grid">
+
+  <!-- CARD 1: Datuk Sharil -->
+  <div class="card">
+    <div class="brand">
+      <div class="brand-name">ikig<span>AI</span></div>
+      <div class="brand-url">ikigai-life.online</div>
+    </div>
+    <div class="person">
+      <div class="person-name">Datuk Sharil Goh Fadhil</div>
+      <div class="person-role">Principal Consultant</div>
+      <div class="person-phone">+601120518366</div>
+    </div>
+    <div class="footer">
+      <div class="company-info">
+        <div class="company-name">Ag Alchemy Consultancy Sdn Bhd</div>
+        <div class="company-reg">857857-T</div>
+        <div class="company-address">26th &amp; 36th Floor, Menara Maxis, KLCC, KL</div>
+      </div>
+      <div class="chat-link">ikigai-life.online/sharil</div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Azlan -->
+  <div class="card">
+    <div class="brand">
+      <div class="brand-name">ikig<span>AI</span></div>
+      <div class="brand-url">ikigai-life.online</div>
+    </div>
+    <div class="person">
+      <div class="person-name">Ir. Ts. Azlan Abas</div>
+      <div style="font-size:8px;color:#555;letter-spacing:0.08em;font-weight:400;margin-top:1px;">ACPE &middot; PMP &middot; CCA</div>
+      <div class="person-role">Principal Engineer</div>
+      <div class="person-phone">+60126012560</div>
+    </div>
+    <div class="footer">
+      <div class="company-info">
+        <div class="company-name">Ag Alchemy Consultancy Sdn Bhd</div>
+        <div class="company-reg">857857-T</div>
+        <div class="company-address">26th &amp; 36th Floor, Menara Maxis, KLCC, KL</div>
+      </div>
+      <div class="chat-link">ikigai-life.online/azlan</div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Mubarak -->
+  <div class="card">
+    <div class="brand">
+      <div class="brand-name">ikig<span>AI</span></div>
+      <div class="brand-url">ikigai-life.online</div>
+    </div>
+    <div class="person">
+      <div class="person-name">Mubarak Mokhtar</div>
+      <div class="person-role">Business Development Director</div>
+      <div class="person-phone">+60137302868</div>
+    </div>
+    <div class="footer">
+      <div class="company-info">
+        <div class="company-name">Ag Alchemy Consultancy Sdn Bhd</div>
+        <div class="company-reg">857857-T</div>
+        <div class="company-address">26th &amp; 36th Floor, Menara Maxis, KLCC, KL</div>
+      </div>
+      <div class="chat-link">ikigai-life.online/mubarak</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─── BACK ─── -->
+<p class="page-label" style="margin-top:20px;">Back (shared)</p>
+
+<div class="card back" style="width:350px; height:200px;">
+  <div style="text-align:center;">
+    <div class="brand-name" style="font-family:'Playfair Display',serif; font-size:34px; font-weight:700;">ikig<span style="font-style:italic;">AI</span></div>
+    <div class="brand-url" style="font-size:10px; letter-spacing:0.18em; color:#666; margin-top:5px;">ikigai-life.online</div>
+    <div style="font-size:8px; color:#aaa; letter-spacing:0.14em; margin-top:12px; text-transform:uppercase;">Design &nbsp;·&nbsp; Development &nbsp;·&nbsp; Data Analytics</div>
+    <div style="width:30px; height:1px; background:#000; margin:14px auto;"></div>
+    <div style="font-size:7.5px; color:#999; letter-spacing:0.1em;">ikigai-life.online/chat</div>
+  </div>
+</div>
+
+</body>
+</html>
