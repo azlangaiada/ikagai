@@ -33,7 +33,7 @@ export async function fetchPageData(url: string, options: FetchOptions) {
   }
 
   // ikigaAI coded marketing routes — globals + (team for About, contact form for Contact)
-  const STATIC_ROUTES = ['kaizen-ai', 'kaizen', 'ai-hospitality', 'about', 'contact']
+  const STATIC_ROUTES = ['kaizen-ai', 'kaizen', 'ai-hospitality', 'about', 'contact', 'chat']
   if (segments.length === 1 && STATIC_ROUTES.includes(segments[0])) {
     const slug = segments[0]
     return cachedFetch(
@@ -47,7 +47,7 @@ export async function fetchPageData(url: string, options: FetchOptions) {
           slug === 'about'
             ? fetchFromPayload('/api/team?limit=20&sort=order&depth=1', payloadUrl)
             : Promise.resolve(null),
-          slug === 'contact'
+          slug === 'contact' || slug === 'chat'
             ? fetchFromPayload('/api/forms?where[title][equals]=Contact&limit=1&depth=1', payloadUrl)
             : Promise.resolve(null),
         ])

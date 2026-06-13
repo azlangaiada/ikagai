@@ -20,6 +20,7 @@ import { KaizenPage } from './pages/ikagai/KaizenPage'
 import { AIHospitalityPage } from './pages/ikagai/AIHospitalityPage'
 import { AboutPage } from './pages/ikagai/AboutPage'
 import { ContactPage } from './pages/ikagai/ContactPage'
+import { ChatPage } from './pages/ikagai/ChatPage'
 
 interface AppProps {
   initialData?: Record<string, any>
@@ -57,6 +58,7 @@ export const App: React.FC<AppProps> = ({ initialData, draft }) => {
             <Route path="/ai-hospitality" element={<AIHospitalityPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/chat" element={<ChatPage />} />
             <Route path="/posts" element={<PostsPage />} />
             <Route path="/posts/page/:pageNumber" element={<PostsPaginatedPage />} />
             <Route path="/posts/:slug" element={<PostPage />} />
