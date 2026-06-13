@@ -143,10 +143,13 @@ async function createServer() {
   })
 
   // /email — shortcut to read the principal@ikigai-life.online mailbox.
-  // Redirects to Microsoft 365 / Outlook webmail (login required — the inbox is
-  // never exposed publicly); the login hint pre-fills the address.
+  // The mailbox is GoDaddy-hosted Microsoft 365 (MX → outlook.protection,
+  // SPF/autodiscover → secureserver.net), so sign-in goes through GoDaddy's
+  // webmail, which SSOs into Outlook on the web. (Direct office.com login
+  // fails for GoDaddy-provisioned M365 accounts.) Login required — the inbox
+  // is never exposed publicly.
   app.get('/email', (_req, res) => {
-    res.redirect('https://outlook.office.com/mail/?login_hint=principal%40ikigai-life.online')
+    res.redirect('https://email.godaddy.com/')
   })
 
   // Escape </ in JSON to prevent script-tag breakout (XSS)
