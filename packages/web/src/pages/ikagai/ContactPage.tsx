@@ -2,7 +2,7 @@ import React from 'react'
 import { usePageData } from '@/hooks/usePageData'
 import { FormBlock } from '@/blocks/Form/Component'
 import { SEO, Hero, Section, Card, Eyebrow } from './_brand'
-import { Mail, MessageCircle, Linkedin, MapPin } from 'lucide-react'
+import { Linkedin, MapPin } from 'lucide-react'
 
 export const OFFICE_ADDRESS = 'Menara Maxis, 26th & 36th Floor, City Centre, 50088 Kuala Lumpur, Malaysia'
 
@@ -10,7 +10,6 @@ export const ContactPage: React.FC = () => {
   const data = usePageData()
   const s = data?.settings || {}
   const form = data?.form
-  const wa = s.whatsappNumber ? `https://wa.me/${String(s.whatsappNumber).replace(/[^0-9]/g, '')}` : null
 
   return (
     <article>
@@ -31,24 +30,8 @@ export const ContactPage: React.FC = () => {
           <div>
             <Eyebrow>Reach us directly</Eyebrow>
             <p className="mt-4 text-sm" style={{ color: 'var(--mute)' }}>
-              Tap a button below to reach us — or use the floating WhatsApp and Email buttons on any page.
+              Fill in the form, or use the floating WhatsApp and Email buttons on any page.
             </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {wa && (
-                <a href={wa} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-white text-sm font-bold hover:opacity-90"
-                  style={{ background: 'var(--green2)' }}>
-                  <MessageCircle size={18} /> Message us on WhatsApp
-                </a>
-              )}
-              {s.contactEmail && (
-                <a href={`mailto:${s.contactEmail}`}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-white text-sm font-bold hover:opacity-90"
-                  style={{ background: 'var(--blue)' }}>
-                  <Mail size={18} /> Email us
-                </a>
-              )}
-            </div>
             <div className="mt-4 grid gap-3">
               <Card>
                 <div className="flex items-start gap-3">
@@ -79,8 +62,8 @@ export const ContactPage: React.FC = () => {
                 <Card>
                   <p className="text-sm" style={{ color: 'var(--mute)' }}>
                     Prefer email? Write to us at{' '}
-                    <a href={`mailto:${s.contactEmail || 'azlan@net1io.com'}`} style={{ color: 'var(--blue)', fontWeight: 700 }}>
-                      {s.contactEmail || 'azlan@net1io.com'}
+                    <a href={`mailto:${s.contactEmail || 'principal@ikigai-life.online'}`} style={{ color: 'var(--blue)', fontWeight: 700 }}>
+                      {s.contactEmail || 'principal@ikigai-life.online'}
                     </a>{' '}
                     and we’ll reply within one business day.
                   </p>

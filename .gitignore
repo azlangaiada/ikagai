@@ -28,3 +28,4 @@ tsconfig.tsbuildinfo
 
 # graphify knowledge graph output (regenerated locally)
 /graphify-out/
+docs/biz-card/email.png

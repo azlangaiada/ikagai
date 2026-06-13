@@ -73,10 +73,10 @@ export const ChatPage: React.FC = () => {
                 <p className="text-sm" style={{ color: 'var(--mute)' }}>
                   Prefer email? Write to us at{' '}
                   <a
-                    href={`mailto:${s.contactEmail || 'azlan@net1io.com'}`}
+                    href={`mailto:${s.contactEmail || 'principal@ikigai-life.online'}`}
                     style={{ color: 'var(--blue)', fontWeight: 700 }}
                   >
-                    {s.contactEmail || 'azlan@net1io.com'}
+                    {s.contactEmail || 'principal@ikigai-life.online'}
                   </a>{' '}
                   and we’ll reply within one business day.
                 </p>

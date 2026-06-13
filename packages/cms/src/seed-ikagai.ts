@@ -69,6 +69,16 @@ const contactForm = {
     { name: 'company', blockName: 'company', blockType: 'text' as const, label: 'Company / property', required: false, width: 100 },
     { name: 'message', blockName: 'message', blockType: 'textarea' as const, label: 'What would you like to improve?', required: true, width: 100 },
   ],
+  // Notification email on submit. emailFrom must be the SMTP-authenticated
+  // sender (net1io); emailTo is where enquiries land.
+  emails: [
+    {
+      emailTo: 'principal@ikigai-life.online',
+      emailFrom: '"ikigAI" <azlan@net1io.com>',
+      subject: 'New enquiry — ikigai-life.online',
+      message: lexical('New enquiry from {{full-name}} ({{email}}) — {{company}}. Message: {{message}}'),
+    },
+  ],
 }
 
 async function run() {
@@ -84,7 +94,7 @@ async function run() {
     slug: 'settings',
     data: {
       whatsappNumber: '+601120518366',
-      contactEmail: 'azlan@net1io.com',
+      contactEmail: 'principal@ikigai-life.online',
       contactEmail2: 'sharil.fadhil@gmail.com',
       socialLinks: [],
     } as any,

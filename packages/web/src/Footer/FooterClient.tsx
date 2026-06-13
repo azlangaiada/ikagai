@@ -16,8 +16,6 @@ interface FooterClientProps {
 export const FooterClient: React.FC<FooterClientProps> = ({ footer, settings }) => {
   const navItems = footer?.navItems || []
   const socialLinks = settings?.socialLinks || []
-  const email = settings?.contactEmail
-  const wa = settings?.whatsappNumber
 
   return (
     <footer className="mt-auto text-white" style={{ background: 'var(--navy)' }}>
@@ -54,22 +52,6 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footer, settings }) 
 
         <div className="flex flex-col gap-3">
           <h3 className="text-base font-bold">Get in touch</h3>
-          <div className="flex gap-3">
-            {wa && (
-              <a href={`https://wa.me/${String(wa).replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-bold text-white hover:opacity-90"
-                style={{ background: 'var(--green2)' }} aria-label="Message us on WhatsApp">
-                WhatsApp
-              </a>
-            )}
-            {email && (
-              <a href={`mailto:${email}`}
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-bold text-white hover:opacity-90"
-                style={{ background: 'var(--blue)' }} aria-label="Email us">
-                Email
-              </a>
-            )}
-          </div>
           <p className="text-sm" style={{ color: '#9fb0c6' }}>{OFFICE_ADDRESS}</p>
           {socialLinks.length > 0 && (
             <div className="flex gap-4 mt-1">

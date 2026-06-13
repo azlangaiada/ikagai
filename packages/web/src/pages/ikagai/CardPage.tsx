@@ -1,6 +1,7 @@
-import React from 'react'
-import { Mail, MessageCircle, Download } from 'lucide-react'
+import React, { useState } from 'react'
+import { Mail, MessageCircle, Download, X } from 'lucide-react'
 import { usePageData } from '@/hooks/usePageData'
+import { FormBlock } from '@/blocks/Form/Component'
 import { SEO } from './_brand'
 
 const EMAIL = 'principal@ikigai-life.online'
@@ -34,6 +35,8 @@ export const CardPage: React.FC = () => {
   const data = usePageData()
   const slug: string | undefined = data?.slug
   const person = slug ? PEOPLE[slug] : undefined
+  const form = data?.form
+  const [open, setOpen] = useState(false)
 
   if (!person) {
     return (
@@ -52,22 +55,27 @@ export const CardPage: React.FC = () => {
       <meta property="og:image" content={`https://ikigai-life.online${person.img}`} />
       <meta name="twitter:card" content="summary_large_image" />
 
-      <div className="mx-auto max-w-[540px] px-4 py-10 flex flex-col items-center gap-6">
-        {/* Business card — click anywhere to email */}
-        <a href={`mailto:${EMAIL}`} aria-label={`Email ${person.name}`} className="block w-full">
+      <div className="mx-auto max-w-[540px] px-4 py-8 sm:py-10 flex flex-col items-center gap-5 sm:gap-6">
+        {/* Business card — tap to open the message popup */}
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label={`Message ${person.name}`}
+          className="block w-full rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        >
           <img
             src={person.img}
             alt={`${person.name} — ikigAI business card`}
             className="w-full rounded-2xl shadow-2xl"
             style={{ border: '1px solid var(--line)' }}
           />
-        </a>
+        </button>
 
         {/* Actions */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <a href={`mailto:${EMAIL}`} className={btn} style={{ background: 'var(--blue)', color: '#fff' }}>
+          <button type="button" onClick={() => setOpen(true)} className={btn} style={{ background: 'var(--blue)', color: '#fff' }}>
             <Mail size={18} /> Email
-          </a>
+          </button>
           <a href={`https://wa.me/${wa}`} target="_blank" rel="noopener noreferrer" className={btn} style={{ background: 'var(--green2)', color: '#fff' }}>
             <MessageCircle size={18} /> WhatsApp
           </a>
@@ -76,18 +84,50 @@ export const CardPage: React.FC = () => {
           </a>
         </div>
 
-        <a href={`mailto:${EMAIL}`} className="text-sm font-semibold" style={{ color: 'var(--blue)' }}>
-          {EMAIL}
-        </a>
-
-        {/* Shared back */}
+        {/* Shared back (carries the email address) */}
         <img
           src="/cards/back.png"
-          alt="ikigAI"
-          className="w-2/3 rounded-xl mt-2"
+          alt="ikigAI — principal@ikigai-life.online"
+          className="w-full sm:w-2/3 rounded-xl mt-2"
           style={{ border: '1px solid var(--line)', opacity: 0.95 }}
         />
       </div>
+
+      {/* Message popup — emails principal@ikigai-life.online via the site Contact form */}
+      {open && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+          style={{ background: 'rgba(11,44,94,0.55)' }}
+          onClick={() => setOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Message ${person.name}`}
+        >
+          <div
+            className="relative w-full max-w-[480px] rounded-2xl shadow-2xl bg-white max-h-[88vh] overflow-y-auto"
+            style={{ border: '1px solid var(--line)' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="sticky top-0 px-5 py-4 flex items-center justify-between text-white"
+              style={{ background: 'linear-gradient(135deg, var(--navy), var(--green2))' }}
+            >
+              <span className="font-extrabold text-lg">Message {person.name}</span>
+              <button onClick={() => setOpen(false)} aria-label="Close" className="hover:opacity-80"><X size={20} /></button>
+            </div>
+            <div className="p-5">
+              {form ? (
+                <FormBlock enableIntro={false} form={form} />
+              ) : (
+                <p className="text-sm" style={{ color: 'var(--mute)' }}>
+                  Prefer email? Write to us at{' '}
+                  <a href={`mailto:${EMAIL}`} style={{ color: 'var(--blue)', fontWeight: 700 }}>{EMAIL}</a>.
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </article>
   )
 }

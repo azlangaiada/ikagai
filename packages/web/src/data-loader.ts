@@ -51,7 +51,7 @@ export async function fetchPageData(url: string, options: FetchOptions) {
           slug === 'about'
             ? fetchFromPayload('/api/team?limit=20&sort=order&depth=1', payloadUrl)
             : Promise.resolve(null),
-          CONTACT_FORM_ROUTES.includes(slug)
+          [...CONTACT_FORM_ROUTES, ...CARD_ROUTES].includes(slug)
             ? fetchFromPayload('/api/forms?where[title][equals]=Contact&limit=1&depth=1', payloadUrl)
             : Promise.resolve(null),
         ])
