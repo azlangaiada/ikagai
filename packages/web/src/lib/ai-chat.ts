@@ -1,8 +1,8 @@
 /**
- * "Ask Us" — stateless single-turn assistant for ikagAI.
+ * "Ask Us" — stateless single-turn assistant for ikigaAI.
  * Vertex AI (Gemini) via Application Default Credentials.
  * Scope is restricted to: the meaning & spirit of ikigai, Kaizen, Lean, Six Sigma,
- * AI for Hospitality/Tourism/F&B, and ikagAI's own site/people/contact data.
+ * AI for Hospitality/Tourism/F&B, and ikigaAI's own site/people/contact data.
  * No conversation history is kept — one question, one answer.
  */
 import { GoogleAuth } from 'google-auth-library'
@@ -14,8 +14,8 @@ const INJECTION_PATTERNS =
 
 // Curated knowledge base for the coded site (pages live in code, not the CMS).
 const KNOWLEDGE = `
-ABOUT ikagAI
-- The name: ikagAI = ikigai + AI. "ikigai" (生き甲斐) is the Japanese idea of a life of purpose — a reason for being, work worth doing done well. Fused with AI it means "a better life with AI".
+ABOUT ikigaAI
+- The name: ikigaAI = ikigai + AI. "ikigai" (生き甲斐) is the Japanese idea of a life of purpose — a reason for being, work worth doing done well. Fused with AI it means "a better life with AI".
 - Spirit: the same respect-for-people and continuous-improvement spirit as Kaizen, now amplified by AI.
 - Method: run Kaizen FIRST to find the real problems, root causes and the identified solution; THEN add AI to the specific parts of that solution where it compounds the gain. It is one continuous engine: SEE -> FIND -> BUILD -> ACT, repeating.
 - Industries served: Hotels & Hospitality, Tourism, and Food & Beverage (F&B).
@@ -79,12 +79,12 @@ async function fetchDbContext(): Promise<string> {
 
 function buildPrompt(question: string, dbJson: string): string {
   return [
-    'You are "Ask Us", the assistant for the ikagAI consulting website.',
+    'You are "Ask Us", the assistant for the ikigaAI consulting website.',
     'You may ONLY answer questions about these topics:',
     '  (a) the meaning and spirit of ikigai;',
     '  (b) Kaizen, Lean, and Six Sigma;',
     '  (c) AI applications for the Hospitality, Tourism and F&B industries;',
-    '  (d) ikagAI itself — its method, people, services, and the contact/DB data provided.',
+    '  (d) ikigaAI itself — its method, people, services, and the contact/DB data provided.',
     'If a question is outside these topics, politely decline in one sentence and list what you can help with.',
     'Keep answers CONCISE and SIMPLE: at most 2-3 short sentences, plain language, no markdown headings.',
     'Never invent facts, figures, vendor names, or guarantees. ROI figures are illustrative only.',

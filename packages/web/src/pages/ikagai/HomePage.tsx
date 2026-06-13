@@ -13,11 +13,11 @@ export const HomePage: React.FC = () => {
     <article>
       <SEO
         title="Better life with AI"
-        description="ikagAI pairs Kaizen with AI for Hospitality, Tourism and F&B. Find the solution with Kaizen, then add AI to the parts that matter — one continuous improvement engine."
+        description="ikigaAI pairs Kaizen with AI for Hospitality, Tourism and F&B. Find the solution with Kaizen, then add AI to the parts that matter — one continuous improvement engine."
       />
 
       <Hero
-        eyebrow="ikigai + AI = ikagAI"
+        eyebrow="ikigai + AI = ikigaAI"
         title={<>From Kaizen finding<br />to a working AI system.</>}
         subtitle={
           <>
@@ -52,7 +52,7 @@ export const HomePage: React.FC = () => {
             </p>
           </Card>
           <Card style={{ borderColor: '#bfe6cd', background: 'var(--green-soft)' }}>
-            <div className="text-lg font-extrabold" style={{ color: 'var(--green)' }}>= ikagAI</div>
+            <div className="text-lg font-extrabold" style={{ color: 'var(--green)' }}>= ikigaAI</div>
             <p className="mt-2 text-sm" style={{ color: 'var(--navy2)' }}>
               A better way of working — and a <strong>better life with AI</strong>. People,
               performance and continuous improvement, fused into one engine.
@@ -112,11 +112,13 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Industries */}
-      <Section alt eyebrow="Where we work" title="Three industries, one method">
+      <Section alt eyebrow="Where we work" title="Five industries, one method">
         <div className="flex flex-wrap gap-2">
           <Chip tone="blue">Hotels &amp; Resorts</Chip>
           <Chip tone="green">Tourism &amp; Experiences</Chip>
           <Chip tone="blue">Food &amp; Beverage</Chip>
+          <Chip tone="green">Banking</Chip>
+          <Chip tone="blue">Data Analytics</Chip>
           <Chip tone="ghost">Safety · Quality · Delivery · Cost</Chip>
         </div>
         <p className="mt-4 max-w-3xl text-sm" style={{ color: 'var(--mute)' }}>

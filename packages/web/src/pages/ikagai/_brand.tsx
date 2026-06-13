@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
 /**
- * Shared ikagAI brand primitives — palette/feel ported from
+ * Shared ikigaAI brand primitives — palette/feel ported from
  * references/kaizen-ai-deck.html. Used by all six marketing pages.
  */
 
 export const SEO: React.FC<{ title: string; description?: string }> = ({ title, description }) => (
   <Helmet>
-    <title>{title} | ikagAI</title>
+    <title>{title} | ikigaAI</title>
     {description && <meta name="description" content={description} />}
   </Helmet>
 )

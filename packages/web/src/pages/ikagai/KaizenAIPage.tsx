@@ -152,7 +152,7 @@ export const KaizenAIPage: React.FC = () => {
           <Eyebrow>The loop</Eyebrow>
           <p className="mt-3 text-base md:text-lg font-semibold" style={{ color: 'var(--navy2)' }}>
             SEE → FIND → BUILD → ACT ↻ — Kaizen and AI run as one continuous engine, not two separate
-            tools. That is ikagAI: <strong>a better life with AI.</strong>
+            tools. That is ikigaAI: <strong>a better life with AI.</strong>
           </p>
         </div>
       </Section>

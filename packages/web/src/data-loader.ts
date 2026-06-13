@@ -32,7 +32,7 @@ export async function fetchPageData(url: string, options: FetchOptions) {
     })
   }
 
-  // ikagAI coded marketing routes — globals + (team for About, contact form for Contact)
+  // ikigaAI coded marketing routes — globals + (team for About, contact form for Contact)
   const STATIC_ROUTES = ['kaizen-ai', 'kaizen', 'ai-hospitality', 'about', 'contact']
   if (segments.length === 1 && STATIC_ROUTES.includes(segments[0])) {
     const slug = segments[0]

@@ -39,7 +39,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
       <div className="brand-topbar" />
       <header className="container relative" {...(theme ? { 'data-theme': theme } : {})}>
         <div className="py-4 flex items-center justify-between">
-          <Link to="/" aria-label="ikagAI home">
+          <Link to="/" aria-label="ikigaAI home">
             <Logo loading="eager" priority="high" />
           </Link>
 

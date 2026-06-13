@@ -1,5 +1,6 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import sharp from 'sharp'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
@@ -23,6 +24,12 @@ import { getServerSideURL } from './utilities/getURL'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+const smtpPort = Number(process.env.SMTP_PORT || 587)
+const smtpAuth =
+  process.env.SMTP_USER && process.env.SMTP_PASS
+    ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
+    : undefined
 
 // Main Payload CMS configuration defining collections, globals, plugins, and database settings
 export default buildConfig({
@@ -77,6 +84,17 @@ export default buildConfig({
   ].filter(Boolean),
   globals: [Header, Footer, Settings],
   plugins,
+  email: nodemailerAdapter({
+    defaultFromName: process.env.SMTP_FROM_NAME || 'ikigaAI',
+    defaultFromAddress: process.env.SMTP_FROM_ADDRESS || 'azlan@net1io.com',
+    skipVerify: true,
+    transportOptions: {
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: smtpPort,
+      secure: process.env.SMTP_SECURE === 'true',
+      auth: smtpAuth,
+    },
+  }),
   secret: process.env.PAYLOAD_SECRET || 'default-secret-change-me',
   sharp,
   typescript: {

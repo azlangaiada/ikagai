@@ -85,7 +85,7 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footer, settings }) 
       </div>
       <div className="border-t border-white/10">
         <div className="container py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs" style={{ color: '#9fb0c6' }}>
-          <span>{footer?.copyright || '© 2026 ikagAI'}</span>
+          <span>{footer?.copyright || '© 2026 ikigaAI'}</span>
           <FooterInfo />
         </div>
       </div>

@@ -1,5 +1,5 @@
 /**
- * Idempotent ikagAI content seed — run with:
+ * Idempotent ikigaAI content seed — run with:
  *   pnpm --filter @ikagai/cms seed:ikagai
  * Seeds the Header/Footer/Settings globals, the two consultant Team members,
  * and the Contact form. Safe to re-run.
@@ -26,7 +26,7 @@ const team = [
     role: 'Kaizen Consulting Partner',
     order: 1,
     linkedin: 'https://www.linkedin.com/in/sharilgohfadhil/',
-    bio: 'Shahril Goh Fadhil leads the Kaizen side of ikagAI. Over a career in operational excellence and continuous improvement, he has guided hospitality, manufacturing and service teams to find where value really leaks — and to close the gap with their own people. He works at the gemba: mapping KPIs against the point of entitlement, running root-cause and 5-Whys analysis, and turning findings into prioritised, owned action lists. His strength is making improvement stick — embedding standard work, visual management and a daily Kaizen rhythm so gains hold long after the workshop ends. Trained in Lean and Six Sigma, he frames every engagement around Safety, Quality, Delivery and Cost, pairing disciplined method with genuine respect for the people who do the work. Fadhil builds the clear, measurable foundation that ikagAI’s AI systems are then engineered to scale.',
+    bio: 'Shahril Goh Fadhil leads the Kaizen side of ikigaAI. Over a career in operational excellence and continuous improvement, he has guided hospitality, manufacturing and service teams to find where value really leaks — and to close the gap with their own people. He works at the gemba: mapping KPIs against the point of entitlement, running root-cause and 5-Whys analysis, and turning findings into prioritised, owned action lists. His strength is making improvement stick — embedding standard work, visual management and a daily Kaizen rhythm so gains hold long after the workshop ends. Trained in Lean and Six Sigma, he frames every engagement around Safety, Quality, Delivery and Cost, pairing disciplined method with genuine respect for the people who do the work. Fadhil builds the clear, measurable foundation that ikigaAI’s AI systems are then engineered to scale.',
   },
   {
     name: 'Azlan Abas',
@@ -74,11 +74,11 @@ const contactForm = {
 async function run() {
   const payload = await getPayload({ config })
 
-  payload.logger.info('Seeding ikagAI globals…')
+  payload.logger.info('Seeding ikigaAI globals…')
   await payload.updateGlobal({ slug: 'header', data: { navItems } as any })
   await payload.updateGlobal({
     slug: 'footer',
-    data: { copyright: '© 2026 ikagAI', developedBy: '', navItems } as any,
+    data: { copyright: '© 2026 ikigaAI', developedBy: '', navItems } as any,
   })
   await payload.updateGlobal({
     slug: 'settings',
@@ -108,7 +108,7 @@ async function run() {
     await payload.create({ collection: 'forms', data: contactForm as any })
   }
 
-  payload.logger.info('✅ ikagAI seed complete.')
+  payload.logger.info('✅ ikigaAI seed complete.')
   process.exit(0)
 }
 

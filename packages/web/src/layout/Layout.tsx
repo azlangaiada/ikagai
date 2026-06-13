@@ -20,7 +20,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       {children}
       {data?.footer && <FooterClient footer={data.footer} settings={data.settings} />}
       <WhatsAppCTA whatsappNumber={data?.settings?.whatsappNumber} />
-      <EmailCTA email={data?.settings?.contactEmail} />
+      <EmailCTA />
       <AskUs />
       <BackToTop />
     </>

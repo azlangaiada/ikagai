@@ -47,7 +47,7 @@ export const AskUs: React.FC = () => {
       {/* Floating AI button — sits between the WhatsApp and Back-to-top buttons */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-[9.5rem] right-6 z-50 p-4 rounded-full shadow-lg text-white flex items-center justify-center transition-transform hover:scale-105"
+        className="fixed bottom-[10rem] right-6 z-50 p-4 rounded-full shadow-lg text-white flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer"
         style={{ background: 'linear-gradient(135deg, var(--navy), var(--green2))' }}
         aria-label="Ask Us — AI assistant"
       >

@@ -73,6 +73,24 @@ async function createServer() {
     }
   })
 
+  // Contact form — sends email to azlan@net1io.com via local Postfix.
+  app.post('/api/contact', async (req, res) => {
+    const { name, email, message } = req.body || {}
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'Name, email and message are required.' })
+    }
+    try {
+      const mod = isProduction
+        ? await import('./src/lib/contact.js')
+        : await vite.ssrLoadModule('/src/lib/contact.ts')
+      await mod.sendContactEmail({ name, email, message })
+      res.json({ ok: true })
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err)
+      res.status(500).json({ error: message })
+    }
+  })
+
   // "Ask Us" — stateless single-turn AI assistant (Vertex AI). One question, one answer.
   app.post('/api/ai-chat', async (req, res) => {
     const ip =

@@ -13,7 +13,7 @@ import { ServicePage } from './pages/ServicePage'
 import { SearchPage } from './pages/SearchPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 
-// ikagAI marketing pages (coded, deck-fidelity)
+// ikigaAI marketing pages (coded, deck-fidelity)
 import { HomePage } from './pages/ikagai/HomePage'
 import { KaizenAIPage } from './pages/ikagai/KaizenAIPage'
 import { KaizenPage } from './pages/ikagai/KaizenPage'

@@ -16,7 +16,7 @@ const fallback: Member[] = [
   {
     name: 'Shahril Goh Fadhil',
     role: 'Kaizen Consulting Partner',
-    bio: 'Shahril Goh Fadhil leads the Kaizen side of ikagAI. Over a career in operational excellence and continuous improvement, he has guided hospitality, manufacturing and service teams to find where value really leaks — and to close the gap with their own people. He works at the gemba: mapping KPIs against the point of entitlement, running root-cause and 5-Whys analysis, and turning findings into prioritised, owned action lists. His strength is making improvement stick — embedding standard work, visual management and a daily Kaizen rhythm so gains hold long after the workshop ends. Trained in Lean and Six Sigma, he frames every engagement around Safety, Quality, Delivery and Cost, pairing disciplined method with genuine respect for the people who do the work. Fadhil builds the clear, measurable foundation that ikagAI’s AI systems are then engineered to scale.',
+    bio: 'Shahril Goh Fadhil leads the Kaizen side of ikigaAI. Over a career in operational excellence and continuous improvement, he has guided hospitality, manufacturing and service teams to find where value really leaks — and to close the gap with their own people. He works at the gemba: mapping KPIs against the point of entitlement, running root-cause and 5-Whys analysis, and turning findings into prioritised, owned action lists. His strength is making improvement stick — embedding standard work, visual management and a daily Kaizen rhythm so gains hold long after the workshop ends. Trained in Lean and Six Sigma, he frames every engagement around Safety, Quality, Delivery and Cost, pairing disciplined method with genuine respect for the people who do the work. Fadhil builds the clear, measurable foundation that ikigaAI’s AI systems are then engineered to scale.',
   },
   {
     name: 'Azlan Abas',
@@ -47,13 +47,13 @@ export const AboutPage: React.FC = () => {
     <article>
       <SEO
         title="About us"
-        description="ikagAI pairs a Kaizen consulting partner with an AI solution builder — one team, one loop: your people plus AI."
+        description="ikigaAI pairs a Kaizen consulting partner with an AI solution builder — one team, one loop: your people plus AI."
       />
 
       <Hero
         eyebrow="One team, one loop"
         title={<>Your people + AI —<br />a better way of working.</>}
-        subtitle="ikagAI brings together Kaizen consulting and AI delivery so improvement is found with your teams and then captured forever in software. Better every day, together."
+        subtitle="ikigaAI brings together Kaizen consulting and AI delivery so improvement is found with your teams and then captured forever in software. Better every day, together."
       />
 
       <Section eyebrow="The consultants" title="Who you work with">
@@ -93,7 +93,7 @@ export const AboutPage: React.FC = () => {
             management, finance and accounting, and mechanical, software and cloud engineering. They
             have led improvement programmes end to end — from first diagnostic through implementation
             to successful project closure and handover — across hospitality, F&amp;B and industrial
-            operations. That means ikagAI can size the opportunity, win the buy-in of the people who
+            operations. That means ikigaAI can size the opportunity, win the buy-in of the people who
             run the floor, build the AI that captures the gain, and make the new way of working stick:
             strategy and engineering, method and delivery, in one team.
           </p>
